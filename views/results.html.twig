@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Car Results</title>
+    </head>
+    <body>
+        <h1>Available Cars</h1>
+        {% if matchedCars is empty %}
+            <h2>There ain't no cars here.</h2>
+        {% else %}
+            <ul>
+                {% for car in matchedCars %}
+                    <img src= {{ car.getImage }}>
+                    <ul>
+                        <li>{{ car.getMake }}</li>
+                        <li>{{ car.getPrice }}</li>
+                        <li>{{ car.getMiles }}</li>
+                    </ul>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>
